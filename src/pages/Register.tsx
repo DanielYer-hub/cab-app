@@ -34,10 +34,11 @@ const RegisterPage = () => {
       });
 
       navigate("/dashboard");
-    } catch (error) {
-      console.error(error);
-      alert("Registration failed");
-    }
+    } catch (error: any) {
+  console.error("REGISTER ERROR:", error);
+  console.error("REGISTER ERROR RESPONSE:", error?.response?.data);
+  alert(error?.response?.data?.message || "Registration failed");
+}
   };
 
   return (
