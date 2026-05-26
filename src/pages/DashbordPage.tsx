@@ -44,18 +44,22 @@ const DashboardPage = () => {
     }
   };
 
-  const handleDeleteSection = async (id: string) => {
-    try {
-      await deleteSection(id);
-      setSections((prev) => prev.filter((section) => section._id !== id));
-    } catch (error) {
-      console.error(error);
-      alert("Failed to delete section");
-    }
-  };
+const handleDeleteSection = async (id: string) => {
+  const confirmed = window.confirm("Delete this section?");
+
+  if (!confirmed) return;
+
+  try {
+    await deleteSection(id);
+    setSections((prev) => prev.filter((section) => section._id !== id));
+  } catch (error) {
+    console.error(error);
+    alert("Failed to delete section");
+  }
+};
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 ">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
           <h1>Dashboard</h1>

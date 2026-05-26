@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const WelcomePage = () => {
   return (
-    <div className="container py-5">
+    <div className="container py-5 mt-5">
       <div className="text-center mt-5">
         <h1 className="mb-3">Welcome to ClientBase</h1>
         <p className="mb-4">

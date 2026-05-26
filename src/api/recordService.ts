@@ -23,6 +23,14 @@ export const createRecord = async (
   return response.data;
 };
 
+export const updateRecord = async (
+  id: string,
+  payload: CreateRecordPayload
+): Promise<RecordItem> => {
+  const response = await axiosInstance.put(`/api/records/${id}`, payload);
+  return response.data;
+};
+
 export const deleteRecord = async (id: string) => {
   const response = await axiosInstance.delete(`/api/records/${id}`);
   return response.data;
